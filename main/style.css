@@ -1,0 +1,47 @@
+header {
+  background-color: #a0c3d2;
+  color: #2a5061;
+  text-align: center;
+  padding: 1rem;
+  border-bottom: 1px solid #2a5061;
+  font-family: "Kalam", cursive;
+}
+
+/* .dogs-container {
+  background-color: aqua;
+} */
+
+h3 {
+  font-family: "Kalam", cursive;
+  color: #2a5061;
+  font-size: 1.5rem;
+}
+
+#dogs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem 5rem;
+  justify-content: center;
+}
+
+.dog-info {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dog-info img {
+  margin: 2rem;
+  border-radius: 8px;
+}
+
+#add-dog {
+  text-align: center;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+

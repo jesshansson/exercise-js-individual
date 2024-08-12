@@ -1,1 +1,1 @@
-# exercise-js-individual
+## Examination project JavaScript

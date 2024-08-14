@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f5eb;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #a0c3d2;
+  color: #2a5061;
+  border-bottom: 1px solid #2a5061;
+  font-family: "Kalam", cursive;
+  height: 10rem;
+}
+
+h3 {
+  font-family: "Kalam", cursive;
+  color: #2a5061;
+  font-size: 1.5rem;
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.07);
+}
+
+a {
+  text-decoration: none;
+  background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255)),
+    linear-gradient(to right, rgb(44, 161, 182), rgb(128, 169, 202), rgb(88, 98, 213));
+  background-size: 100% 2px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: 0.2s ease-in-out;
+  /* margin-top: 5px; */
+  color: black;
+  font-size: 20px;
+}
+
+a:hover {
+  background-size: 0 2px, 100% 2px;
+  transform: scale(1.1);
+}

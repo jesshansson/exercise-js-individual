@@ -1,0 +1,40 @@
+#welcome-msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem;
+  font-family: "Fira Sans", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+#welcome-msg button {
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+}
+
+#welcome-msg h1 {
+  font-family: "Fira Sans", sans-serif;
+  margin-bottom: 2rem;
+}
+
+#welcome-msg img {
+  margin-top: 2rem;
+  border-radius: 100%;
+}
+
+@media (max-width: 800px) {
+  #welcome-msg h1 {
+    font-size: 30px;
+  }
+
+  #welcome-msg {
+    font-size: 16px;
+  }
+
+  #welcome-msg img {
+    width: 300px;
+  }
+}

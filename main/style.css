@@ -1,22 +1,3 @@
-header {
-  background-color: #a0c3d2;
-  color: #2a5061;
-  text-align: center;
-  padding: 1rem;
-  border-bottom: 1px solid #2a5061;
-  font-family: "Kalam", cursive;
-}
-
-/* .dogs-container {
-  background-color: aqua;
-} */
-
-h3 {
-  font-family: "Kalam", cursive;
-  color: #2a5061;
-  font-size: 1.5rem;
-}
-
 #dogs-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -24,18 +5,23 @@ h3 {
   justify-content: center;
 }
 
-.dog-info {
+.dog-info,
+#updateDogForm {
   border: 1px solid #ccc;
+  border-radius: 5px;
   padding: 10px;
   margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 8px 10px 19px -17px rgba(134, 134, 134, 0.6);
+  background-color: #f7f6f6;
 }
 
 .dog-info img {
   margin: 2rem;
   border-radius: 8px;
+  width: 300px;
 }
 
 #add-dog {
@@ -43,5 +29,55 @@ h3 {
   margin: 2rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
+#updateDogForm {
+  padding: 1rem 5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  button {
+    margin-top: 1rem;
+  }
+}
+
+.dog-info button {
+  margin: 10px;
+}
+
+#add-msg {
+  border: 1px solid #ccc;
+  padding: 1rem 5rem;
+  border-radius: 5px;
+  box-shadow: 8px 10px 19px -17px rgba(134, 134, 134, 0.6);
+  transition: transform 0.3s ease;
+  font-size: 18px;
+  background-color: #f7f6f6;
+
+  p {
+    margin-bottom: 15px;
+  }
+}
+
+#add-msg:hover {
+  transform: scale(1.07);
+}
+
+@media (max-width: 800px) {
+  #dogs-list {
+    grid-template-columns: 1fr;
+    margin: 1rem;
+  }
+
+  .dog-info {
+    padding: 5px;
+  }
+
+  .dog-info img {
+    margin: 0.5rem;
+  }
+}

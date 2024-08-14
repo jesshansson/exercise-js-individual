@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4Paws</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../commonStyles.css" />
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Kalam&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap");
-      @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-    </style>
+    <link rel="stylesheet" href="../sharedStyles.css" />
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
   </head>
   <body>
@@ -20,12 +15,18 @@
     </header>
     <section class="dogs-container">
       <div id="add-dog">
-        <p>
-          Would you like to join the 4paws community? <br />
-          <a href="../add-dog/index.html">Click here!</a>
-        </p>
+        <div id="add-msg">
+          <p>
+          Would you like to join the 4paws community?
+          </p><a href="../add-dog/index.html">Click here!</a>
+        </div>
+        
 
       <div id="dogs-list"></div>
+
+       <section id="update-section"></section>
+
+      <a href="../startpage/index.html"><p>Startpage</p></a>
       <div id="error-message"></div>
     </section>
     <script src="script.js"></script>

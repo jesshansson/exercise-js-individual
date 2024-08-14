@@ -1,0 +1,42 @@
+body {
+  text-align: center;
+  padding: 2rem;
+}
+
+img {
+  margin-bottom: 2rem;
+  border-radius: 30px;
+}
+
+#addDogForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#addDogForm button {
+  align-self: center;
+  font-size: 18px;
+  margin-top: 2rem;
+}
+
+#addDogForm label,
+#addDogForm input,
+#addDogForm button {
+  margin-bottom: 5px;
+}
+
+#addDogForm input {
+  padding: 5px;
+  font-size: 14px;
+}
+
+#addDogForm label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+#goBack {
+  margin-top: 1rem;
+}

@@ -4,7 +4,7 @@ API_URL = "https://majazocom.github.io/Data/dogs.json";
 //userDogs: Här sparas de hundar som användaren lägger till via formuläret.
 //Vid sidladdning (DOMContentLoaded) laddas hundarna från både apiDogs och userDogs och visas tillsammans.
 //När en ny hund läggs till, uppdateras endast userDogs, och kombinerade listan visas igen.
-//När sidan laddas kommer den bara att visa de 10 första API-hundarna plus eventuellt tillagda hundar, inte hela API-listan.
+//När sidan laddas kommer den bara att visa de 12 första API-hundarna plus eventuellt tillagda hundar, inte hela API-listan.
 //displayDogs(allDogs): Visar alla hundar, både de som hämtas från API och de som läggs till av användaren.
 
 async function fetchDogs() {
@@ -13,7 +13,7 @@ async function fetchDogs() {
     let data = await response.json(); // Konvertera svaret till JSON
 
     // Begränsa antalet hundar som visas från API:et
-    let limitedDogs = data.slice(0, 10);
+    let limitedDogs = data.slice(0, 12);
 
     // Spara datan (begränsat antal från API) i localStorage som en sträng
     localStorage.setItem("apiDogs", JSON.stringify(limitedDogs));
@@ -114,8 +114,8 @@ function deleteDog(index) {
 function showUpdateForm(index) {
   let apiDogs = JSON.parse(localStorage.getItem("apiDogs")) || [];
   let userDogs = JSON.parse(localStorage.getItem("userDogs")) || [];
-  let dogs, dog; // Dessa variabler används i funktionen för att hålla referenser till den array där den aktuella hunden (dog) finns, och själva hundobjektet som vi vill uppdatera.
-  //Vi använder dogs för att referera till antingen apiDogs eller userDogs beroende på var den aktuella hunden finns. Vi använder dog för att hålla själva hundobjektet som vi vill uppdatera.
+  let dogs, dog; // Dessa variabler används i funktionen för att hålla referenser till den array där den aktuella hunden (dog) finns, och själva hundobjektet som ska uppdateras.
+  //"dogs" används för att referera till antingen apiDogs eller userDogs beroende på var den aktuella hunden finns.
 
   // Kontrollera om hunden tillhör API-datan eller användarens data
   if (index < apiDogs.length) {
@@ -175,10 +175,13 @@ function showUpdateForm(index) {
     dog.owner.phoneNumber = document.getElementById("updateOwnerPhone").value;
 
     // Spara uppdateringen i localStorage
-    localStorage.setItem(
-      index < JSON.parse(localStorage.getItem("apiDogs")).length ? "apiDogs" : "userDogs",
-      JSON.stringify(dogs)
-    );
+    if (index < JSON.parse(localStorage.getItem("apiDogs")).length) {
+      // Om indexet tillhör apiDogs
+      localStorage.setItem("apiDogs", JSON.stringify(dogs));
+    } else {
+      // Om indexet tillhör userDogs
+      localStorage.setItem("userDogs", JSON.stringify(dogs));
+    }
 
     // Uppdatera visningen
     displayDogs(

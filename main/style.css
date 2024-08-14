@@ -67,6 +67,13 @@
   transform: scale(1.07);
 }
 
+@media (min-width: 1500px) {
+  #dogs-list {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 1rem;
+  }
+}
+
 @media (max-width: 800px) {
   #dogs-list {
     grid-template-columns: 1fr;

@@ -66,6 +66,7 @@ footer {
   color: #2a5061;
   border-top: 1px solid #2a5061;
   height: 3rem;
+  width: 100%;
 }
 
 @media (max-width: 800px) {

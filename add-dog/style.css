@@ -43,3 +43,9 @@ img {
 #goBack {
   margin-top: 1rem;
 }
+
+@media (max-width: 800px) {
+  img {
+    width: 18rem;
+  }
+}

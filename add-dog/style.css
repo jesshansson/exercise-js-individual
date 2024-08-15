@@ -1,11 +1,14 @@
 body {
   text-align: center;
-  padding: 2rem;
 }
 
 img {
   margin-bottom: 2rem;
   border-radius: 30px;
+}
+
+#add-dog-container {
+  padding: 2rem;
 }
 
 #addDogForm {

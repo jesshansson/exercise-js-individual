@@ -49,6 +49,10 @@
   margin: 10px;
 }
 
+input {
+  padding: .2rem;
+}
+
 #add-msg {
   border: 1px solid #ccc;
   padding: 1rem 5rem;
@@ -75,6 +79,10 @@
 }
 
 @media (max-width: 800px) {
+  #add-msg {
+    padding: 1.5rem;
+  }
+
   #dogs-list {
     grid-template-columns: 1fr;
     margin: 1rem;
@@ -86,5 +94,9 @@
 
   .dog-info img {
     margin: 0.5rem;
+  }
+
+  #updateDogForm {
+    padding: 0.8rem 4rem;
   }
 }

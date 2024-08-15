@@ -21,7 +21,7 @@
 }
 
 #welcome-msg img {
-  margin-top: 2rem;
+  margin: 2rem;
   border-radius: 100%;
 }
 
@@ -37,5 +37,6 @@
 
   #welcome-msg img {
     width: 300px;
+    margin: 2rem;
   }
 }

@@ -1,10 +1,7 @@
 API_URL = "https://majazocom.github.io/Data/dogs.json";
 
-//apiDogs: Här sparas endast de första 10 hundarna från API
+//apiDogs: Här sparas endast ett urval av hundarna från API
 //userDogs: Här sparas de hundar som användaren lägger till via formuläret.
-//Vid sidladdning (DOMContentLoaded) laddas hundarna från både apiDogs och userDogs och visas tillsammans.
-//När en ny hund läggs till, uppdateras endast userDogs, och kombinerade listan visas igen.
-//När sidan laddas kommer den bara att visa de 12 första API-hundarna plus eventuellt tillagda hundar, inte hela API-listan.
 //displayDogs(allDogs): Visar alla hundar, både de som hämtas från API och de som läggs till av användaren.
 
 async function fetchDogs() {
@@ -15,7 +12,7 @@ async function fetchDogs() {
     // Begränsa antalet hundar som visas från API:et
     let limitedDogs = data.slice(0, 12);
 
-    // Spara datan (begränsat antal från API) i localStorage som en sträng
+    // Spara datan (begränsat antal från API) med nyckeln "apiDogs" i localStorage som en sträng
     localStorage.setItem("apiDogs", JSON.stringify(limitedDogs));
 
     // Kolla om det finns fler hundar i localStorage och lägg till dem
@@ -32,12 +29,12 @@ async function fetchDogs() {
 
 //Funktionen som anropas i fetchDogs, för att visa hundarna
 function displayDogs(dogs) {
-  const dogsList = document.getElementById("dogs-list"); // Hämta elementet där listan ska visas
+  const dogsList = document.getElementById("dogs-list"); // Elementet där listan ska visas
   dogsList.innerHTML = ""; // Rensa listan innan uppdatering
 
   dogs.forEach((dog, index) => {
     let dogDiv = document.createElement("div"); // Skapa en ny div för varje hund
-    dogDiv.classList.add("dog-info"); // Klass för CSS-styling
+    dogDiv.classList.add("dog-info");
 
     // Hundens namn
     let nameElement = document.createElement("h3");
@@ -70,11 +67,13 @@ function displayDogs(dogs) {
     updateButton.onclick = function () {
       showUpdateForm(index);
     };
-    // Dlete-knapp
+    // Delete-knapp
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";
     deleteButton.onclick = function () {
-      deleteDog(index);
+      if (confirm("Are you sure you wish to delete dog from 4paws?")) {
+        deleteDog(index);
+      }
     };
 
     // Lägg till alla element i hund-diven
@@ -194,5 +193,13 @@ function showUpdateForm(index) {
     updateSection.innerHTML = "";
   });
 }
+
+document.getElementById("scrollToTop").onclick = function (event) {
+  event.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth", 
+  });
+};
 
 fetchDogs();

@@ -5,6 +5,8 @@ document.getElementById("addDogForm").addEventListener("submit", function (event
   let fullName = document.getElementById("ownerName").value.split(" ");
   let firstName = fullName[0]; // Förnamn är den första delen
   let lastName = fullName.slice(1).join(" "); // Efternamn är resten
+  let dogQuote = document.getElementById("dogQuote").value || "No quote provided";
+  let randomImage = `https://placedog.net/400/200?random=${Math.floor(Math.random() * 1000)}`;
 
   // Skapa ett nytt hundobjekt
   let newDog = {
@@ -16,6 +18,8 @@ document.getElementById("addDogForm").addEventListener("submit", function (event
       lastName: lastName,
       phoneNumber: document.getElementById("ownerPhone").value,
     },
+    quote: dogQuote,
+    img: randomImage,
   };
 
   // Lagra den nya hunden i localStorage
@@ -23,5 +27,6 @@ document.getElementById("addDogForm").addEventListener("submit", function (event
   savedDogs.push(newDog);
   localStorage.setItem("userDogs", JSON.stringify(savedDogs));
 
-  window.location.href = "../main/index.html";
+  // Navigera till sidan med hundarna
+  window.location.href = "../main/index.html#bottom";
 });

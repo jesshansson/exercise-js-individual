@@ -61,6 +61,25 @@ function displayDogs(dogs) {
     let ownerPhone = document.createElement("p");
     ownerPhone.textContent = `Phone: ${dog.owner.phoneNumber}`;
 
+    // Citatet
+    let quoteElement = document.createElement("p");
+    quoteElement.id = "quote";
+    quoteElement.textContent = `"${dog.quote}"`;
+
+    // Om ett citat finns i objektet, använd det, annars hämta ett nytt
+    if (dog.quote && dog.quote !== "No quote provided") {
+      quoteElement.textContent = `"${dog.quote}"`;
+    } else {
+      // Hämta och lägg till ett nytt citat om inget är sparat
+      fetch("https://api.kanye.rest/")
+        .then((response) => response.json())
+        .then((data) => {
+          quoteElement.textContent = `"${data.quote}"`;
+        })
+        .catch((error) => {
+          console.error("Error fetching data", error);
+        });
+    }
     // Update-knapp
     let updateButton = document.createElement("button");
     updateButton.textContent = "Update";
@@ -83,6 +102,7 @@ function displayDogs(dogs) {
     dogDiv.appendChild(ageElement);
     dogDiv.appendChild(ownerName);
     dogDiv.appendChild(ownerPhone);
+    dogDiv.appendChild(quoteElement); // Lägg till citatet här
     dogDiv.appendChild(updateButton);
     dogDiv.appendChild(deleteButton);
 
@@ -198,7 +218,7 @@ document.getElementById("scrollToTop").onclick = function (event) {
   event.preventDefault();
   window.scrollTo({
     top: 0,
-    behavior: "smooth", 
+    behavior: "smooth",
   });
 };
 
